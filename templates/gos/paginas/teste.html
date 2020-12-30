@@ -1,0 +1,10 @@
+{% extends 'gos/paginas/base.html' %} {%block content%}
+<a href="/logout/">logout</a>
+<ul>
+  {%for os in os %}
+  <li>
+    <a href="{% url 'home' %}"> {{os.servico}} </a>
+  </li>
+  {%endfor%}
+</ul>
+{%endblock%}
