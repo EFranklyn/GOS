@@ -1,0 +1,54 @@
+{% extends 'gos/paginas/base.html' %}
+
+    {% block title %} - Mudar OS {% endblock%}
+{% block content %}
+    <h3>Nova OS</h3>
+    <div class="container">
+    <form action="/os/create/" method="post">
+        {%csrf_token%}
+        <div class="form-group">
+            <label for="servico">Servico</label>
+            <input type="text" id="servico" name="servico" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="referencia">Referencia</label>
+            <input type="text" id="referencia" name="referencia" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="logradouro">Rua</label>
+            <input type="text" id="logradouro" name="logradouro" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="numero">N°</label>
+            <input type="text" id="numero" name="numero" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="complemento">Complemento</label>
+            <input type="text" id="complemento" name="complemento" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="uf">Estado</label>
+            <select id="uf" name="uf" class="form-control">
+                {% for uf in uf %}
+                    <option value="{{uf.0}}">{{uf.1}}</option>
+                {% endfor%}
+            </select>
+        </div><br>
+
+        <button type="submit" class="btn btn-success">Gerar</button>
+
+    </form>
+    </div>
+{% endblock content %}

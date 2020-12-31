@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from gos import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +25,6 @@ urlpatterns = [
     path('consulta/<str:osservico>/', views.consulta),
     path('login/',views.login),
     path('logout/',views.logout),
-]
+    path('os/create/', views.geraros),
+    path('os/<str:servico>/edit/', views.editos),
+] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

@@ -1,10 +1,26 @@
 {% extends 'gos/paginas/base.html' %} {%block content%}
 <a href="/logout/">logout</a>
-<ul>
-  {%for os in os %}
-  <li>
-    <a href="{% url 'home' %}"> {{os.servico}} </a>
-  </li>
-  {%endfor%}
-</ul>
+<div class="container">
+  <div class = "caixa"style="overflow-x: auto">
+    <div class=" conteudo">
+     {%for os in os%}
+    <div class="card ">
+      <h6 class="card-header">servico: {{os.servico}}</h6>
+      <div class="card-body">
+        <p class="card-text">servico: {{os.servico}}</p>
+        <p class="card-text">Referencia: {{os.referencia}}</p>
+        <p class="card-text">Cidade: {{os.cidade}}</p>
+        <p class="card-text">Data do Pedido: {{os.dtpedido}}</p>
+      </div>
+    </div>
+    {%endfor%}
+
+  </div>
+
+  </div>
+
+  </div>
 {%endblock%}
+
+
+

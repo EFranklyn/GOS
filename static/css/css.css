@@ -1,0 +1,46 @@
+table.tabelafixa {
+  width: 980px;
+  border-spacing: 100;
+}
+tbody.tabelafixa,
+thead.tabelafixa tr {
+  display: block;
+}
+
+tbody.tabelafixa {
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+tbody.tabelafixa td,
+thead.tabelafixa th {
+  width: 160px;
+}
+
+thead.tabelafixa th:last-child {
+  width: 160px;
+}
+
+.conteudo {
+  /*display: flex;*/
+  flex-direction: column;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  width: 100%;
+  height: 300px;
+  background-color: blue;
+}
+.cardy {
+  background-color: red;
+  min-width: 300px;
+  margin: 2px;
+
+  /*text-align: center;*/
+}
+.caixa {
+  background-color: red;
+  width: 300;
+
+}
+
